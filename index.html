@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
+  <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("cards").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("cards").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 5000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "images/2d.png";
+          images[1] = "images/3d.png";
+          images[2] = "images/4d.png";
+          images[3] = "images/5d.png";
+          images[4] = "images/6d.png";
+          images[5] = "images/7d.png";
+          images[6] = "images/8d.png";
+          images[7] = "images/9d.png";
+      </script>
+  </head>
+  <body onload = "startTimer()">
+    <div class="container main">
+
+      <h1 align="center"> HTTP Deck </h1>
+
+    <div class="row featurette">
+        <div class="row">
+          <p class="lead"><strong>HTTP verbs and codes</strong> enable the daily business of the internet. Clients, who are everyone who is going to a website or requesting data from a website, ask publishers or merchants on the internet for said websites or data. The language of this transaction is very specific to allow anyone anywhere to participate. It is primarily made up of verbs and codes.</p>
+        </div>
+      </div>
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"> <span class="text-muted">HTTP verbs like GET, POST, and PUT...</span></h2>
+          <p class="lead">give clients four ways to send data to server software and HTTP status codes give the software acting on behalf of publishers and merchants 66 different ways to respond. This deck of cards provides a tutorial and reminder of those verbs and codes.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="images/deck001.png" alt="Generic placeholder image">
+        </div>
+      </div>
+      <div>
+        
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-8">
+          <img class="featurette-image img-responsive center-block" src="images/legend001.png" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-4">
+
+          <h2 class="featurette-heading"><span class="text-muted">Legend</span></h2>
+          <p class="lead">Each card will feature the HTTP verb or status, the associated status codes, and short colloquial explanation.</p> <p>For example, the two of diamonds features the 202 - Accepted HTTP status code. Technically speaking, "202" is sent when a client, someone like you who, is sending data to a website that needs to processed in some way, like a video. </p><p> Think about when you've uploaded a video to Youtube or Vimeo, it's not immediately available for viewing, because the server needs to process the video. If the "202 - Accepted" wasn't sent, you would have to keep that webpage open until the server finished processing - that could take almost an hour! The "202" let's your browser know that the data is received and you can move on with your life!</p>
+        </div>
+
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"> <span class="text-muted">Browse the Deck</span></h2>
+          <p class="lead">The deck of playing cards makes learning the verbs and statuses a passive activity. You can browse our mock-ups of the 
+          diamonds, two through nine. The rough verb/status and text of all the cards is listed below.</p>
+                     <button onclick="displayPreviousImage()">Previous</button>
+            <button onclick="displayNextImage()">Next</button>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="/images/2d.png" alt="Generic placeholder image" id="cards">
+
+        </div>
+      </div>
+      <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="featurette-heading"> <span class="text-muted">Red Cards</span></h2>
+        </div>
+        <div class="col-md-6">
+            <h2 class="featurette-heading"> <span class="text-muted">Black Cards</span></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+            <li>King: GET – The HTTP GET verb is used to retrieve (or read) a representation of a resource</li>
+            <li>Queen: OPTIONS - This method allows you to find which verbs you can use to interact with a server - such as GET, POST, PUT,etc.</li>
+            <li>Jack: HEAD -  HEAD is a faster way of checking the headers and some server info for a given resource on the server.</li>
+            <li>10: 100 Continue - Sometimes we need to check with the server before we send our full request, basically ask "Is it cool to do what I'm trying to do?". The server responds with a 100!</li>
+            <li>9: 409 Conflict - Server could carry out request, but it would create a duplicate of something or delete a file that something else depends on!</li>
+            <li>8: 401 Unauthorized -  Client doesn't have an authentication token or its now invalid, need to login again!</li>
+            <li>7: 304 Not Modified - a conditional GET requests asks the server if anything has changed? Server says 304!</li>
+            <li>6: 203 Created - data POST fulfilled and something was created! i.e. Your blog post is created!</li>
+            <li>5: 503 Service Unavailable - the server is either overloaded or down for maintenance, it's temporary...hopefully!</li>
+            <li>4: 408 Request Timeout - the server got tired of waiting for the client to request something, so it left...go find it again using the domain name!</li>
+            <li>3: 301 Moved Permanently - that website is no longer at that domain, but we'll forward your mail...I mean request to the new address.</li>
+            <li>2: 202 Accepted - You uploaded a video to Youtube, it was Accepted! But boo, you have to wait for it to be processed to watch it!</li>
+            <li>Ace: 200 OK - When server fulfills a GET successfully, i.e. the website loads or the download starts!</li>
+        </ul>
+        </div>
+        <div class="col-md-6">
+            <li>King POST – The POST verb is most-often utilized for creation of new resources </li>
+            <li>Queen PUT – PUT is most-often utilized for update capabilities </li>
+            <li>Jack DELETE – DELETE is pretty easy to understand. It is used to delete a resource</li>
+            <li>10: 101 Switching Protocols - Some web applications like instant messaging or chatting use web sockets, a different protocol from HTTP, the 101 code let's us know the server is ready to switch!</li>
+            <li>9: 500 Internal Server Error - Server tried, but failed. If doesn't know what to say, it will at least say 500!</li>
+            <li>8: 403 Forbidden - The server understood the request but the client is not allowed to see! Logging in will make no difference</li>
+            <li>7: 400 Bad Request - the client request makes no sense, its malformed - server is scurred.</li>
+            <li>6: 204 No Content - a DELETE request doesn't require any content returned</li>
+            <li>5: 502 Bad Gateway - the server had to talk to another program and something went wrong there...a programmer needs to fix this!</li>
+            <li>4: 410 Gone - the resource requested is gone and ain't comin' back. You'll have to think of something else.</li>
+            <li>3: 402 Payment Required - this is reserved for future use as part of a digital cash payment system - Apple Pay?</li>
+            <li>2: 420 Enhance Your Calm - if you make too many requests of Twitter's servers, they tell you to chillax for a while before talking to them again.</li>
+            <li>Ace: 404, Not Found - No clue what you are asking for!</li>
+        </div>
+    </div>
+
+
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 <a href="http://aankit.com">Aankit Patel</a> and <a href="https://www.behance.net/motionpack">Pedro Galvao</a>. &middot;</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
